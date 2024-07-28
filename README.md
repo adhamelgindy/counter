@@ -5,9 +5,23 @@
 pnpm install
 ```
 
-### Compiles and hot-reloads for development
+### Compiles frontend
 ```
-pnpm run serve
+pnpm dev
+```
+
+### Compiles backend
+```
+pnpm start
+```
+### Run frontend test
+```
+pnpm test:frontend
+```
+
+### Run backend test
+```
+pnpm test:backend
 ```
 
 ### Compiles and minifies for production
@@ -15,6 +29,10 @@ pnpm run serve
 pnpm run build
 ```
 
+### Lints and fixes files
+```
+pnpm run lint
+```
 ### Lints and fixes files
 ```
 pnpm run lint
