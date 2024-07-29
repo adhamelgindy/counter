@@ -1,42 +1,66 @@
-# counter
+# Counter Application
 
-## Project setup
-```
-pnpm install
-```
+## Description
+This is a simple counter application that allows users to increment and decrement a counter value.
 
-### Compiles frontend
-```
-pnpm dev
-```
+## Project Setup
 
-### Compiles backend
-```
-pnpm start
-```
-### Run frontend test
-```
-pnpm test:frontend
-```
+### Backend
 
-### Run backend test
-```
+The backend server is built using Express and socketIo.
+
+### Frontend
+
+The frontend is developed using Vue.js.
+
+## Installation
+
+### Backend Setup
+
+1. Navigate to the backend directory:
+    ```sh
+    cd backend
+    ```
+
+2. Install backend dependencies:
+    ```sh
+    pnpm install
+    ```
+
+3. Start the backend server:
+    ```sh
+    pnpm start
+    ```
+
+### Frontend Setup
+
+1. Navigate to the frontend directory:
+    ```sh
+    cd frontend
+    ```
+
+2. Install frontend dependencies:
+    ```sh
+    pnpm install
+    ```
+
+3. Start the frontend development server:
+    ```sh
+    pnpm dev
+    ```
+
+## Running Tests
+
+### Backend Tests
+
+To run the backend tests, use the following command:
+```sh
 pnpm test:backend
 ```
 
-### Compiles and minifies for production
-```
-pnpm run build
-```
+### Frontend Tests
 
-### Lints and fixes files
-```
-pnpm run lint
-```
-### Lints and fixes files
-```
-pnpm run lint
-```
+To run the frontend tests, use the following command:
+```sh
+pnpm test:frontend
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
