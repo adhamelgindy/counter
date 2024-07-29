@@ -63,4 +63,7 @@ pnpm test:backend
 To run the frontend tests, use the following command:
 ```sh
 pnpm test:frontend
+```
+## Screenshot
 
+![Screenshot](frontend/public/Screenshot.jpg)
