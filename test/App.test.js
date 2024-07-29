@@ -3,7 +3,7 @@ import '@testing-library/jest-dom';
 import App from '../src/App.vue';
 
 describe('App', () => {
-    it('renders the counter and buttons', async () => {
+    it('Has counter and buttons', async () => {
         const { getByText, findByText } = render(App);
 
         expect(await findByText('Count: 0')).toBeInTheDocument();
@@ -11,7 +11,7 @@ describe('App', () => {
         expect(getByText('Decrement')).toBeInTheDocument();
     });
 
-    it('increments the counter when Increment button is clicked', async () => {
+    it('increments the counter by 1', async () => {
         const { getByText, findByText } = render(App);
         const incrementButton = getByText('Increment');
 
@@ -19,7 +19,7 @@ describe('App', () => {
         expect(await findByText('Count: 1')).toBeInTheDocument();
     });
 
-    it('decrements the counter when Decrement button is clicked', async () => {
+    it('decrements the counter by 1', async () => {
         const { getByText, findByText } = render(App);
         const decrementButton = getByText('Decrement');
 
@@ -27,7 +27,7 @@ describe('App', () => {
         expect(await findByText('Count: -1')).toBeInTheDocument();
     });
 
-    it('increments the counter by 5 when Increment button is clicked 5 times', async () => {
+    it('increments the counter by 5', async () => {
         const { getByText, findByText } = render(App);
         const incrementButton = getByText('Increment');
 
@@ -37,7 +37,7 @@ describe('App', () => {
         expect(await findByText('Count: 5')).toBeInTheDocument();
     });
 
-    it('decrements the counter by 3 when Decrement button is clicked 3 times', async () => {
+    it('decrements the counter by 3', async () => {
         const { getByText, findByText } = render(App);
         const decrementButton = getByText('Decrement');
 

@@ -1,54 +1,11 @@
 <script setup>
 import { ref, onMounted } from 'vue';
-import { io } from 'socket.io-client';
 
-// Define a reactive reference for the counter
 const counter = ref(0);
 
-// Initialize socket connection
-const socket = io('http://localhost:5000');
-
-// Function to increment the counter
-const incrementCounter = async () => {
-  counter.value++;
-  // console.log('counter', counter.value);
-
-  try {
-    await fetch('http://localhost:5000/increment', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ counter: counter.value }) // Serialize to JSON
-    });
-  } catch (e) {
-    console.error('Error:', e)
-  }
-};
-
-// Function to decrement the counter
-const decrementCounter = async () => {
-  counter.value--;
-  console.log('counter', counter.value);
-  try {
-    await fetch('http://localhost:5000/decrement', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ counter: counter.value }) // Serialize to JSON
-    });
-  } catch (e) {
-    console.error('Error:', e
-    );
-  }
-
-};
-
-// Function to fetch the current counter value
 const fetchCounter = async () => {
   try {
-    const response = await fetch('http://localhost:5000/counter');
+    const response = await fetch('http://localhost:2019/counter');
     const data = await response.json();
     counter.value = data.counter;
   } catch (e) {
@@ -57,13 +14,44 @@ const fetchCounter = async () => {
   }
 };
 
-// Handle socket events and initial fetch when component mounts
 onMounted(() => {
-  socket.on('counterUpdated', (data) => {
-    counter.value = data.counter;
-  });
   fetchCounter();
 });
+
+const incrementCounter = async () => {
+  counter.value++;
+
+  try {
+    await fetch('http://localhost:2019/increment', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ counter: counter.value })
+    });
+  } catch (e) {
+    console.error('Error:', e)
+  }
+};
+
+const decrementCounter = async () => {
+  counter.value--;
+
+  try {
+    await fetch('http://localhost:2019/decrement', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ counter: counter.value })
+    });
+  } catch (e) {
+    console.error('Error:', e
+    );
+  }
+
+};
+
 </script>
 
 <template>
